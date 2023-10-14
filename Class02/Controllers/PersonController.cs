@@ -54,14 +54,18 @@ namespace Class02.Controllers
         //        }
         //        if (ModelState.IsValid)
         //        {
+        //            // process the information
+        //            
+        //            //transfer information to other action
         //            TempData["values"] = collection["name"] + " [" + collection["age"] + "]";
 
-        //            ViewData["testeFalhado"] = "só para confirmar...";
+        //            ViewData["failedTest"] = "Just to confirm that ViewData doesn't work on Redirects...";
 
         //            return RedirectToAction(nameof(Index));
         //        }
         //        else
         //        {
+        //            // if model has errors, it return to the view and show the errors
         //            return View();
         //        }
         //    }
@@ -81,12 +85,16 @@ namespace Class02.Controllers
             {
                 if (ModelState.IsValid)
                 {
+                    // process the information
+
+                    //transfer information to other action
                     TempData["values"] = newPerson.Name + " [" + newPerson.Age + "]";
 
                     return RedirectToAction(nameof(Index));
                 }
                 else
                 {
+                    // if model has errors, it return to the view and show the errors
                     return View();
                 }
             }

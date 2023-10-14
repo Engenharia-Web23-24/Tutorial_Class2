@@ -12,11 +12,12 @@ namespace Class02.Controllers
         [HttpPost]
         public IActionResult Index(IFormCollection formData)
         {
-            ViewData["text_inserted"] = formData["name"];
-            ViewData["other_text_inserted"] = formData["age"];
+            // action used to process the the form submitted
+            ViewData["text_inserted"] = formData["name"]; //transfer data to the view
+            ViewData["other_text_inserted"] = formData["age"]; // transfer data to the view
 
-
-            return View("Index2");
+            return View("Index2"); // uses another view instead using the default view name
+                                   // (usualy has the same name as the method - Index)
         }
     }
 }
